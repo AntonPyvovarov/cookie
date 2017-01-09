@@ -31,12 +31,11 @@ include_once "function.php";
 </form>
 <form action="" method="post">
     <select  name="action" value="setColor">
-        <?php foreach ($arrColors as $value) {
-            ?>
-            <option value="<?php $value ?>"><?php echo $value ?></option><?php
+        <?php foreach ($arrColors as $value) {?>
+            <option name="<?php $value ?>"><?php echo $value ?></option><?php
         } ?>
-        <input type="submit">
     </select>
+        <input type="submit">
 </form>
     <footer>You've visited to this page <?php echo $visits ?> times</footer>
 </body>
