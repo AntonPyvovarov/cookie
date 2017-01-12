@@ -12,23 +12,8 @@ include_once "function.php";
     <title>Document</title>
 </head>
 <body style="background-color: <?php echo $color ?>">
-<h2>Choose your theme color </h2>
-<form action="" method="post">
-    <input type="hidden" name="action" value="changeColor">
-    <label for="color">Choose your color</label>
-    <input type="text" name="color" id="color">
-    <div style="clear:both"></div>
-    <input type="submit">
-</form>
-<h2>Login form</h2>
-<form action="" method="post" id="loginForm">
-    <input type="hidden" name="action" value="login">
-    <label for="login">Login</label>
-    <input type="text" name="login" id="login">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-    <input type="submit" value="login">
-</form>
+
+<?php if(!isSetColor()){?>
 <form action="" method="post">
     <select  name="action" value="setColor">
         <?php foreach ($arrColors as $value) {?>
@@ -37,6 +22,7 @@ include_once "function.php";
     </select>
         <input type="submit">
 </form>
+<?php }else echo "Ви вибрали колір $color"?>
     <footer>You've visited to this page <?php echo $visits ?> times</footer>
 </body>
 </html>
